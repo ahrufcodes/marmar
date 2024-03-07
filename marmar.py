@@ -17,7 +17,7 @@ def check_drug_interactions(medications, age="", weight="", height=""):
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a knowledgeable assistant trained to provide information on drug interactions, but first classify the risk of interaction into severe, mild or moderate and offer tailored health advice."
+                    "content": "You are a knowledgeable assistant trained to provide information on drug interactions, but first classify the risk of interaction only into (severe, mild, moderate) and offer tailored health advice."
                 },
                 {
                     "role": "user",
@@ -28,7 +28,7 @@ def check_drug_interactions(medications, age="", weight="", height=""):
                                f"Then, based on age: {age}, weight: {weight}, and height: {height}, offer tailored advice."
                 }
             ],
-            max_tokens=350,  # Limiting the output to 350 tokens
+            max_tokens=400,  # Limiting the output to 350 tokens
         
         )
         # Response will be structured appropriately
